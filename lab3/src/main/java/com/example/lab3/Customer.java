@@ -1,5 +1,4 @@
 package com.example.lab3;
-
 public class Customer {
     private String ID;
     private String name;
@@ -17,37 +16,28 @@ public class Customer {
     public String getID() {
         return ID;
     }
-
     public void setID(String ID) {
         this.ID = ID;
     }
-
     public String getName() {
-        return name;
-    }
-
+        return name;ฆ
     public void setName(String name) {
         this.name = name;
     }
-
     public boolean isSex() {
         return sex;
     }
-
     public void setSex(boolean sex) {
         this.sex = sex;
     }
-
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         if (age < 0){
             this.age = 0;
         }else{
             this.age = age;
         }
-
     }
 }

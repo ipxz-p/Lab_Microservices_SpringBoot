@@ -15,7 +15,6 @@ public class CustomerController {
         customers.add(new Customer("1110", "Rose", false, 23));
         customers.add(new Customer("1001", "Emma", false, 30));
     }
-
     private List<Customer> customers;
     @RequestMapping(value = "/customers")
     public List<Customer> getCustomers(){ return this.customers; }
