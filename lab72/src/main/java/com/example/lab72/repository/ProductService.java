@@ -19,7 +19,7 @@ public class ProductService {
         System.out.println(this.pdRepository.insert(pd));
         return true;
     }
-    @CachePut(value = "myproduct")
+    @CacheEvict(value = "myproduct", allEntries = true)
     public boolean updateProduct(Product pd) {
         this.pdRepository.save(pd);
         return true;

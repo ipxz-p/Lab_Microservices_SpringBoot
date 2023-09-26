@@ -110,6 +110,7 @@ public class ProductView extends VerticalLayout {
 
         this.deleteBtn.addClickListener(buttonClickEvent -> {
             rabbitTemplate.convertSendAndReceive("ProductExchange", "delete", this.allPd.products.get(this.showingIndex));
+            this.allPd.products.remove(showingIndex);
             this.nf.setText("Deleted");
             this.nf.open();
         });
