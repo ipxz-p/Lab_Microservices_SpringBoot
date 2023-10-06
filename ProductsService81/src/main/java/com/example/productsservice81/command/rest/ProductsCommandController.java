@@ -1,4 +1,4 @@
-package com.example.productsservice81.rest;
+package com.example.productsservice81.command.rest;
 
 import com.example.productsservice81.command.CreateProductCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
@@ -10,11 +10,11 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/products")
-public class ProductsController {
+public class ProductsCommandController {
     private final Environment env;
     private final CommandGateway commandGateway;
     @Autowired
-    public ProductsController(Environment env, CommandGateway commandGateway){
+    public ProductsCommandController(Environment env, CommandGateway commandGateway){
 
         this.env = env;
         this.commandGateway = commandGateway;
@@ -34,10 +34,6 @@ public class ProductsController {
             result = e.getLocalizedMessage();
         }
         return result;
-    }
-    @GetMapping
-    public String getProduct(){
-        return "HTTP GET Handled " + env.getProperty("local.server.port");
     }
     @PutMapping
     public String updateProduct(){
